@@ -5,7 +5,6 @@ class Login extends CI_Controller{
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('login_model');
- 
 	}
  
 	function index(){
@@ -32,7 +31,8 @@ class Login extends CI_Controller{
 			redirect('admin');
  
 		}else{
-			echo "Username dan password salah !";
+			$this->session->set_userdata(array('pesan'=>"Username dan password salah !"));
+			redirect('login');
 		}
 	}
  
