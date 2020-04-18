@@ -12,7 +12,7 @@
 	Email : <input type="text" name="email" value="<?php echo $email; ?>"><br>
 	<input type="submit" value="Ubah Data">
 </form>
-<p color="lightgreen"><?php echo $this->session->userdata('pesan'); ?></p>
+<p style="color: lightgreen"><?php echo $this->session->userdata('pesan'); ?></p>
 <?php unset($_SESSION['pesan']); ?>
 </body>
 </html>
