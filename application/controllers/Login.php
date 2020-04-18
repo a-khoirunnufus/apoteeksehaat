@@ -21,14 +21,18 @@ class Login extends CI_Controller{
 		$cek = $this->login_model->cek_login("pengguna",$where)->num_rows();
 		if($cek > 0){
  
+ 			$result = $this->login_model->cek_login("pengguna",$where)->row_array();
+
 			$data_session = array(
+				'id' => $result['id'],
 				'nama' => $username,
+				'tipe_user' => $result['tipe_user'],
 				'status' => "login"
 				);
  
 			$this->session->set_userdata($data_session);
  
-			redirect('admin');
+			redirect($result['tipe_user']);
  
 		}else{
 			$this->session->set_userdata(array('pesan'=>"Username dan password salah !"));

@@ -12,6 +12,7 @@
 	<input type="text" name="password"><br>
 	<input type="submit" value="Login">
 </form>
-<p style="color: red"><?php echo $this->session->userdata('pesan'); unset($_SESSION['pesan']); ?></p>
+<p style="color: red"><?php echo $this->session->userdata('pesan'); ?></p>
+<?php unset($_SESSION['pesan']); ?>
 </body>
 </html>
