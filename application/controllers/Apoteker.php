@@ -42,6 +42,14 @@ class Apoteker extends CI_Controller{
 		redirect('apoteker/menu_kelola_profil/'.$id);
 	}
 
+	//update harga jual obat
+	function update_harga_jual(){
+		$id_obat = $this->input->post('id_obat');
+		$harga_jual = $this->input->post('harga_jual');
+		$this->obat_model->update_harga_jual($id_obat,$harga_jual);
+		redirect('apoteker');
+	}
+
 	//update stok obat
 	function update_stok_obat(){
 		$data = array(
@@ -60,7 +68,7 @@ class Apoteker extends CI_Controller{
 			'tanggal_jual' => $this->load->post('tanggal_jual'),
 			'harga_total' => $this->load->post('harga_total')
 		);
-		$this->penjualan_model->input_penjualan($data['id_penjualan'],$data);
+		$this->penjualan_model->input_penjualan($data);
 		redirect('apoteker/menu_penjualan')
 	}
 
@@ -79,7 +87,7 @@ class Apoteker extends CI_Controller{
 			'id_penjualan' => $this->load->post('id_penjualan'),
 			'id_obat' => $this->load->post('id_obat')
 		);
-		$this->item_penjualan_model->delete_item_penjualan($data['id_penjualan'],$data['id_obat']);
+		$this->item_penjualan_model->delete_item_penjualan($data);
 	}
 
 	//get harga obat
@@ -88,7 +96,7 @@ class Apoteker extends CI_Controller{
 	}
 
 	//create update delete pembelian
-	function input_penjualan(){
+	function input_pembelian(){
 		$data = array(
 			'id_pembelian' => $this->input->post('id_pembelian'),
 			'no_faktur' => $this->input->post('no_faktur'),

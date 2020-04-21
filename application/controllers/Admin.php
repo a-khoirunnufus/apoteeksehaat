@@ -79,7 +79,8 @@ class Admin extends CI_Controller{
 			'harga_pokok' => $this->input->post('harga_pokok'),
 			'harga_jual' => $this->input->post('harga_jual'),
 			'isi_obat' => $this->input->post('isi_obat'),
-			'stok_min' => $this->input->post('stok_min')
+			'stok_min' => $this->input->post('stok_min'),
+			'stok_gudang' => $this->input->post('stok_gudang')
 		);
 		$this->obat_model->input_obat($data);
 		redirect('admin/menu_kelola_obat');
