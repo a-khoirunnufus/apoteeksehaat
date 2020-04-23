@@ -16,7 +16,7 @@ class Apoteker extends CI_Controller{
  	//menu navigasi start
 
 	function index(){
-		$this->load->view('dashboard_apoteker');
+		$this->load->view('apoteker/dashboard_apoteker');
 	}
 
 	function menu_penjualan(){
@@ -69,7 +69,7 @@ class Apoteker extends CI_Controller{
 			'harga_total' => $this->load->post('harga_total')
 		);
 		$this->penjualan_model->input_penjualan($data);
-		redirect('apoteker/menu_penjualan')
+		redirect('apoteker/menu_penjualan');
 	}
 
 	// input dan delte item penjualan obat
@@ -105,8 +105,8 @@ class Apoteker extends CI_Controller{
 			'id_supplier' => $this->input->post('id_supplier'),
 			'tgl_expired' => $this->input->post('tgl_expired')
 		);
-		$this->pembelian_model->input_pembelian($data['id_pembelian'],$data);
-		redirect('apoteker/menu_pembelian')
+		$this->pembelian_model->input_pembelian($data);
+		redirect('apoteker/menu_pembelian');
 	}
 
 	// input dan delte item penjualan obat
@@ -124,7 +124,7 @@ class Apoteker extends CI_Controller{
 			'id_pembelian' => $this->load->post('id_pembelian'),
 			'id_obat' => $this->load->post('id_obat')
 		);
-		$this->item_pembelian_model->delete_item_pembelian($data['id_pembelian'],$data['id_obat']);
+		$this->item_pembelian_model->delete_item_pembelian($data);
 	}
 
 
