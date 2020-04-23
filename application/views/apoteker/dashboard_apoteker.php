@@ -8,134 +8,197 @@
     <title>Tubes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- custom style -->
+    <style>
+        /*sidenav start*/
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          margin-top: 70px;
+        }
+
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        /*sidenav end*/
+
+        .spad{
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
-<body>
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="<?php echo base_url(); ?>">
-    Apotek Sehat
-  </a>
-  <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <img src="https://image.shutterstock.com/image-vector/people-icon-trendy-flat-style-260nw-432263914.jpg" class="rounded-circle" height = 20px;>
-  </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Account</a>
-    <a class="dropdown-item" href="#">Balance</a>
-    <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">Logout</a>
+<body class="bg-light">
+    <!-- bagian navbar atas start -->
+    <section div class="m-0 bg-dark sticky-top">
+        <div class="pos-f-t">
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" id="sidebar_toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" onclick="openNav()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="ml-3 mr-auto">
+                    <a class="navbar-brand" href="<?php echo base_url(); ?>">Apotek Sehat</a>
+                </div>
+                <div class="dropdown dropleft">
+                    <div class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<?php echo base_url('assets/img/profile-2.png'); ?>" class="rounded-circle" style="width: 40px">
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Kelola Profil</a>
+                        <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!-- bagian navbar atas end -->
 
-</nav>
-
-  <div class="row">
-    <div class="col-2 bg-dark text-light " text-align= center; >
-        <img src="https://image.shutterstock.com/image-vector/people-icon-trendy-flat-style-260nw-432263914.jpg" class="rounded-circle" height = 150px; text-align= center;>
-        <h3 text-align= center;>Nama User</h3>
-        <h5 text-align= center;>Tipe User</h5>
-        <br><br>
-        <div class="dropright bg-dark text-ligh">
-            <button class="bg-dark text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown">
-                Dashboard
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+    <!-- bagian sidebat start -->
+    <div class="sidenav bg-dark" id="mySidenav" style="transition: width 0s;">
+        <div class="col-12 text-light p-4">
+            <div class="row d-flex flex-column">
+                <div class="mx-auto">
+                    <img src="<?php echo base_url('assets/img/profile-2.png'); ?>" class="rounded-circle" style="width: 125px">
+                </div>
+                <div style="text-align: center;">Nama User</div>
+                <div style="text-align: center;">Tipe User</div>
+            </div>
+            <hr>
+            <div class="row d-flex flex-column pl-4">
+                <span>Dashboard</span><br>
+                <span>Penjualan</span><br>
+                <span>Pembelian</span>
             </div>
         </div>
-        <br><br>
-        <div class="dropright bg-dark text-ligh">
-            <button class="bg-dark text-light" type="button" id="dropdownMenuButton4" data-toggle="dropdown">
-                Penjualan
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div>
-        <br><br>
-        <div class="dropright bg-dark text-light">
-            <button class="bg-dark text-light" type="button" id="dropdownMenuButton3" data-toggle="dropdown">
-                Pembelian
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
-    <div class="row">
-     <div class="col p-3 px-md-5"><h2>Dashboard</h2></div>
-     <div> <br><br><br><br><br><br>
-    <button class="bg-dark text-light" type="button">
-    <img height =50px; src="https://library.kissclipart.com/20180830/grw/kissclipart-dollar-bill-icon-png-clipart-united-states-one-dol-d756dbc2808f5ce6.jpg"><br>
-               Input Penjualan
-    </button>
-    <button class="bg-dark text-light" type="button">
-    <img height = 50px; src="https://thumbs.dreamstime.com/b/shopping-basket-trolley-icon-simple-flat-style-ui-design-shopping-basket-trolley-icon-simple-flat-style-ui-design-107493003.jpg">
-        <br>Input Pembelian
-    </button>
-    <button class="bg-dark text-light" type="button" >
-    <img height = 50px; src="https://image.shutterstock.com/image-vector/recent-history-log-260nw-1157591170.jpg">
-        <br> Riwayat Pembelian
-    </button>
-    <button class="bg-dark text-light" type="button" >
-    <img height = 50px; src="https://image.shutterstock.com/image-vector/recent-history-log-260nw-1157591170.jpg">
-        <br>Riwayat Penjualan
-    </button>
-        <table class="table table-bordered">
-    <thead>
-        <tr>
-        <th scope="col">No</th>
-        <th scope="col">Id Obat</th>
-        <th scope="col">Nama Obat</th>
-        <th scope="col">Stok Minimal </th>
-        <th scope="col">Stok Gudang</th>
-        <th scope="col">Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>    </td>
-        <td>Otto</td>
-        <td><button type="button" class="btn btn-success">Ubah</button></td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td><button type="button" class="btn btn-success">Ubah</button></td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td><button type="button" class="btn btn-success">Ubah</button></td>
-        </tr>
-    </tbody>
-    </table>
+    <!-- bagian sidebar end -->
+
+    <!-- bagian isi   -->
+    <!-- header -->
+    <div class="container spad">
+        <div class="row">
+            <div class="mr-auto">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="ml-auto">
+                <button class="btn btn-primary mr-2" style="font-size: 12px; padding: 5px">ubah</button>
+                <span>09:00 , 01 Januari 2020<span>
+            </div>
+        </div>
     </div>
 
-    
-    </div>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            <div class="float-right p-3"><h2>Tanggal</h2></div>
+    <!-- tombol navigasi menu -->
+    <div class="container spad">
+        <div class="col-12">
+            <div class="row d-flex justify-content-center">
+                <div class="rounded p-5 mx-3" style="background-color: white">
+                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                    <span>Input Penjualan</span>
+               </div>
+               <div class="rounded p-5 mx-3" style="background-color: white">
+                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                    <span>Input Penjualan</span>
+               </div>
+               <div class="rounded p-5 mx-3" style="background-color: white">
+                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                    <span>Input Penjualan</span>
+               </div>
+               <div class="rounded p-5 mx-3" style="background-color: white">
+                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                    <span>Input Penjualan</span>
+               </div>
+            </div>
         </div>
     </div>
-    
-  </div>
-  
+
+    <!-- tabel stok obat -->
+    <div class="container spad">
+        <div class="col-12 p-5 rounded" style="background-color: white">
+            <h4>Tabel Stok Obat</h4>
+            <div class="row mt-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Id Obat</th>
+                        <th scope="col">Nama Obat</th>
+                        <th scope="col">Stok Minimal </th>
+                        <th scope="col">Stok Gudang</th>
+                        <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>100</td>
+                        <td>67</td>
+                        <td><button type="button" class="btn btn-success">Ubah</button></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>100</td>
+                        <td>76</td>
+                        <td><button type="button" class="btn btn-success">Ubah</button></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>100</td>
+                        <td>76</td>
+                        <td><button type="button" class="btn btn-success">Ubah</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- custom script   -->
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("sidebar_toggler").getAttributeNode("onclick").value = "closeNav()";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("sidebar_toggler").getAttributeNode("onclick").value = "openNav()";
+        }
+    </script>
 </body>
