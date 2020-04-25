@@ -50,7 +50,7 @@
                             <span>Password</span>
                         </div>
                         <div class="col-8">
-                            <input type="text" class="form-control form-control-sm" name="password">
+                            <input type="password" class="form-control form-control-sm" name="password">
                         </div>
                     </div>
                     <div class="row mx-0">
