@@ -73,15 +73,15 @@ class Apoteker extends CI_Controller{
 	}
 
 	//create update delete penjualan
-	function input_penjualan(){
+	function input_penjualan($id_penjualan){
 		$data = array(
-			'id_penjualan' => $this->load->post('id_penjualan'),
+			'id_penjualan' => $id_penjualan,
 			'nama_konsumen' => $this->load->post('nama_konsumen'),
 			'tanggal_jual' => $this->load->post('tanggal_jual'),
 			'harga_total' => $this->load->post('harga_total')
 		);
 		$this->penjualan_model->input_penjualan($data);
-		redirect('apoteker/menu_penjualan');
+		redirect('apoteker/kelola_penjualan');
 	}
 
 	// input dan delte item penjualan obat
