@@ -18,12 +18,24 @@ class Apoteker extends CI_Controller{
  	//menu navigasi start
 
 	function index(){
+		$data['obat'] = $this->obat_model->get_all();
 		$this->load->view('templates/top_template');
-		$this->load->view('apoteker/dashboard_apoteker');
+		$this->load->view('apoteker/dashboard_apoteker',$data);
 	}
 
-	function menu_penjualan(){
-		$this->load->view('penjualan');
+	function ubah_harga_obat(){
+		$data['obat'] = $this->obat_model->get_all();
+		$this->load->view('templates/top_template');
+		$this->load->view('apoteker/ubah_harga_obat',$data);
+	}
+
+	function kelola_penjualan(){
+		$data['penjualan'] = $this->penjualan_model->get_all();
+		$data['obat'] = $this->obat_model->get_all();
+		$data['item_penjualan'] = $this->penjualan_model->get_all_item();
+		$data['newid'] = $this->penjualan_model->get_newid();
+		$this->load->view('templates/top_template');
+		$this->load->view('apoteker/kelola_penjualan',$data);
 	}
 
 	function menu_pembelian(){
@@ -47,20 +59,16 @@ class Apoteker extends CI_Controller{
 	}
 
 	//update harga jual obat
-	function update_harga_jual(){
-		$id_obat = $this->input->post('id_obat');
+	function ubah_harga_jual($id_obat){
 		$harga_jual = $this->input->post('harga_jual');
-		$this->obat_model->update_harga_jual($id_obat,$harga_jual);
-		redirect('apoteker');
+		$this->obat_model->ubah_harga_jual($id_obat,$harga_jual);
+		redirect('apoteker/ubah_harga_obat');
 	}
 
 	//update stok obat
-	function update_stok_obat(){
-		$data = array(
-			'id_obat' => $this->input->post('id_obat'),
-			'stok_obat' => $this->input->post('stok_obat')
-		);
-		$this->obat_model->update_stok_obat($data['id_obat'],$data['stok_obat']);
+	function ubah_stokgudang($id_obat){
+		$stok_gudang = $this->input->post('stok_gudang');
+		$this->obat_model->ubah_stokgudang($id_obat,$stok_gudang);
 		redirect('apoteker');
 	}
 
@@ -77,13 +85,9 @@ class Apoteker extends CI_Controller{
 	}
 
 	// input dan delte item penjualan obat
-	function input_item_penjualan(){
-		$data = array(
-			'id_penjualan' => $this->load->post('id_penjualan'),
-			'id_obat' => $this->load->post('id_obat'),
-			'jumlah_obat' => $this->load->post('jumlah_obat')
-		);
-		$this->item_penjualan_model->input_item_penjualan($data);
+	function input_item_penjualan($id_obat){
+		
+		$this->item_penjualan_model->input_item_penjualan($id_obat);
 	} 
 
 	function delete_item_penjualan(){

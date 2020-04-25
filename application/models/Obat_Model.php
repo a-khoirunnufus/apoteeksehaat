@@ -18,14 +18,14 @@ class Obat_Model extends CI_Model{
 		return $this->db->delete('obat',array('id_obat' => $id_obat));
 	}
 
-	function update_harga_jual($id_obat,$harga_jual){
+	function ubah_harga_jual($id_obat,$harga_jual){
 		$this->db->where('id_obat',$id_obat);
 		return $this->db->update('obat',array('harga_jual' => $harga_jual));
 	}
 
-	function update_stok_obat($id_obat,$stok_obat){
+	function ubah_stokgudang($id_obat,$stok_gudang){
 		$this->db->where('id_obat',$id_obat);
-		return $this->db->update('obat',array('stok_gudang' => $stok_obat));
+		return $this->db->update('obat',array('stok_gudang' => $stok_gudang));
 	}
 
 	function get_newid(){
