@@ -2,10 +2,10 @@
  
 class Pembelian_Model extends CI_Model{	
 	function get_all(){
-		return $this->db->get('pembelian_obat')->result();
+		return $this->db->get('pembelian')->result_array();
 	}
 	function get_all_item(){
-		return $this->db->get('item_pembelian')->result();
+		return $this->db->get('item_pembelian')->result_array();
 	}
 	function input_pembelian($data){
 		return $this->db->insert('pembelian',$data);

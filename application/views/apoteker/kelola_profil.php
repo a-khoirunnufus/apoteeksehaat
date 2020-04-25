@@ -28,45 +28,45 @@
                 <img src="<?php echo base_url('assets/img/profile-2.png'); ?>" style="width: 200px;">
             </div>
             <div class="col-7">
-            <form>
+            <form action="<?php echo base_url('admin/ubah_profil/'.$pengguna['id_pengguna']); ?>" method="post">
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        <label for="input_namaobat">Nama</label>
+                        <span>Nama</span>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" id="input_namaobat" name="nama_obat">
+                        <input class="form-control" type="text" name="nama_lengkap" placeholder="<?php echo $pengguna['nama_lengkap']; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        <label for="input_golobat">Username</label>
+                        <span>Username</span>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" id="input_golobat" name="golongan_obat">
+                        <input class="form-control" type="text" name="username" placeholder="<?php echo $pengguna['username']; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        <label for="input_bentukobat">Password</label>
+                        <span>Password</span>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" id="input_bentukobat" name="bentuk_obat">
+                        <input class="form-control" type="text" name="password" placeholder="<?php echo $pengguna['password']; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        <label for="input_hargapokok">No HP</label>
+                        <span>No HP</span>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" id="input_hargapokok" name="harga_pokok">
+                        <input class="form-control" type="text" name="no_hp" placeholder="<?php echo $pengguna['no_hp']; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-4">
-                        <label for="input_jumlahisi">Email</label>
+                        <span>Email</span>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" id="input_jumlahisi" name="isi_obat">
+                        <input class="form-control" type="text" name="email" placeholder="<?php echo $pengguna['email']; ?>">
                     </div>
                 </div>
                 <div class="form-group row mt-4">

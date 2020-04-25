@@ -1,10 +1,10 @@
             <div class="row d-flex flex-column pl-4">
-                <span>Dashboard</span><br>
-                <span>Obat</span><br>
-                <span>Supplier</span><br>
-                <span>Apoteker</span><br>
-                <span>Riwayat Penjualan</span><br>
-                <span>Riwayat Pembelian</span>
+                <a href="<?php echo site_url('admin');?>"><h6>Dashboard</h6></a>
+                <a href="<?php echo site_url('admin/kelola_obat');?>"><h6>Obat</h6></a>
+                <a href="<?php echo site_url('admin/kelola_supplier');?>"><h6>Supplier</h6></a>
+                <a href="<?php echo site_url('admin/kelola_apoteker');?>"><h6>Apoteker</h6></a>
+                <a href="<?php echo site_url('admin/riwayat_penjualan');?>"><h6>Riwayat Penjualan</h6></a>
+                <a href="<?php echo site_url('admin/riwayat_pembelian');?>"><h6>Riwayat Pembelian</h6></a>
             </div>
         </div>
     </div>

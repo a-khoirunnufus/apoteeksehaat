@@ -18,21 +18,18 @@ class Login extends CI_Controller{
 			'username' => $username,
 			'password' => $password
 			);
-		$cek = $this->login_model->cek_login("pengguna",$where)->num_rows();
-		if($cek > 0){
- 
- 			$result = $this->login_model->cek_login("pengguna",$where)->row_array();
-
+		$result = $this->login_model->cek_login('pengguna',$where);
+		if($result > 0){
 			$data_session = array(
-				'id' => $result['id'],
-				'nama' => $username,
-				'tipe_user' => $result['tipe_user'],
+				'id_pengguna' => $result['id_pengguna'],
+				'nama' => $result['nama_lengkap'],
+				'tipe_pengguna' => $result['tipe_pengguna'],
 				'status' => "login"
 				);
  
 			$this->session->set_userdata($data_session);
  
-			redirect($result['tipe_user']);
+			redirect($result['tipe_pengguna']);
  
 		}else{
 			$this->session->set_userdata(array('pesan'=>"Username dan password salah !"));

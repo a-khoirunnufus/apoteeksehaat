@@ -1,8 +1,8 @@
 <?php 
  
-class Pembelian_Model extends CI_Model{	
+class Supplier_Model extends CI_Model{	
 	function get_all(){
-		return $this->db->get('supplier')->result();
+		return $this->db->get('supplier')->result_array();
 	}
 
 	function input_supplier($data){
@@ -16,5 +16,9 @@ class Pembelian_Model extends CI_Model{
 
 	function delete_supplier($id_supplier){
 		return $this->db->delete('supplier',array('id_supplier' => $id_supplier));
+	}
+
+	function get_newid(){
+		return $this->db->select('id_supplier')->order_by('id_supplier',"desc")->limit(1)->get('supplier')->row_array();
 	}	
 }

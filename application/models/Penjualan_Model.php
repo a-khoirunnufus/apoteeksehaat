@@ -2,10 +2,10 @@
  
 class Penjualan_Model extends CI_Model{	
 	function get_all(){
-		return $this->db->get('penjualan_obat')->result();
+		return $this->db->get('penjualan')->result_array();
 	}
 	function get_all_item(){
-		return $this->db->get('item_penjualan')->result();
+		return $this->db->get('item_penjualan')->result_array();
 	}
 
 	function input_penjualan($data){

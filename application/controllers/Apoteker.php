@@ -9,6 +9,8 @@ class Apoteker extends CI_Controller{
 			redirect('login');
 		}
 		$this->load->model('obat_model');
+		$this->load->model('supplier_model');
+		$this->load->model('apoteker_model');
 		$this->load->model('penjualan_model');
 		$this->load->model('pembelian_model');
 	}
@@ -16,6 +18,7 @@ class Apoteker extends CI_Controller{
  	//menu navigasi start
 
 	function index(){
+		$this->load->view('templates/top_template');
 		$this->load->view('apoteker/dashboard_apoteker');
 	}
 
@@ -32,8 +35,9 @@ class Apoteker extends CI_Controller{
 	// update profil apoteker
 	function ubah_profil($id){
 		$data = array(
-			'nama_lengkap' => $this->input->post('nama'),
-			'foto_profil' => $this->input->post('foto_profil'),
+			'nama_lengkap' => $this->input->post('nama_lengkap'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
 			'no_hp' => $this->input->post('no_hp'),
 			'email' => $this->input->post('email')
 		);

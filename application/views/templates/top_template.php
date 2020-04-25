@@ -83,14 +83,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="ml-3 mr-auto">
-                    <a class="navbar-brand" href="<?php echo base_url(); ?>">Apotek Sehat</a>
+                    <a class="navbar-brand" href="<?php echo base_url($this->session->userdata['tipe_pengguna']); ?>">Apotek Sehat</a>
                 </div>
                 <div class="dropdown dropleft">
                     <div class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="<?php echo base_url('assets/img/profile-2.png'); ?>" class="rounded-circle" style="width: 40px">
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Kelola Profil</a>
+                        <a class="dropdown-item" href="<?php echo base_url($this->session->userdata('tipe_pengguna').'/kelola_profil/'.$this->session->userdata('id_pengguna')); ?>">Kelola Profil</a>
                         <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">Logout</a>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="mx-auto">
                     <img src="<?php echo base_url('assets/img/profile-2.png'); ?>" class="rounded-circle" style="width: 125px">
                 </div>
-                <div style="text-align: center;">Nama User</div>
-                <div style="text-align: center;">Tipe User</div>
+                <div style="text-align: center;"><?php echo $this->session->userdata('nama'); ?></div>
+                <div style="text-align: center;"><?php echo $this->session->userdata('tipe_pengguna'); ?></div>
             </div>
             <hr>

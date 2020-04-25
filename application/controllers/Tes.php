@@ -5,26 +5,17 @@ class Tes extends CI_Controller{
 		$this->load->view('admin/dashboard_admin');
 	}
 
-	function obat(){
-		$this->load->view('templates/top_template');
-		$this->load->view('admin/obat');
-	}
-	function supplier(){
-		$this->load->view('templates/top_template');
-		$this->load->view('admin/supplier');
-	}
-	function apoteker(){
-		$this->load->view('templates/top_template');
-		$this->load->view('admin/apoteker');
+	function index(){
+		$this->load->view('loginn');
 	}
 
-	function penjualan(){
+	function admin($halaman){
 		$this->load->view('templates/top_template');
-		$this->load->view('apoteker/penjualan');
+		$this->load->view('admin/'.$halaman);
 	}
 
-	function pembelian(){
+	function apoteker($halaman){
 		$this->load->view('templates/top_template');
-		$this->load->view('apoteker/pembelian');
+		$this->load->view('apoteker/'.$halaman);
 	}
 }
