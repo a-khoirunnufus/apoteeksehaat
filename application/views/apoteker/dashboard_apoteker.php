@@ -1,8 +1,8 @@
             <div class="row d-flex flex-column pl-4">
-                <span>Dashboard</span>
+                <a href="<?php echo site_url('apoteker'); ?>"><h6>Dashboard</h6></a>
                 <a href="<?php echo site_url('apoteker/ubah_harga_obat'); ?>"><h6>Ubah Harga Obat</h6></a>
-                <span>Penjualan</span><br>
-                <span>Pembelian</span>
+                <a href="<?php echo site_url('apoteker/kelola_penjualan'); ?>"><h6>Penjualan</h6></a>
+                <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><h6>Pembelian</h6></a>
             </div>
         </div>
     </div>
@@ -31,18 +31,10 @@
                     <span>Penjualan</span>
                </div></a>
 
-               <div class="rounded p-5 mx-3" style="background-color: white">
+               <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
                     <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Input Penjualan</span>
-               </div>
-               <div class="rounded p-5 mx-3" style="background-color: white">
-                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Input Penjualan</span>
-               </div>
-               <div class="rounded p-5 mx-3" style="background-color: white">
-                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Input Penjualan</span>
-               </div>
+                    <span>Pembelian</span>
+               </div></a>
             </div>
         </div>
     </div>

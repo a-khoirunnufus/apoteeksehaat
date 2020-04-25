@@ -2,6 +2,7 @@
  
 class Pembelian_Model extends CI_Model{	
 	function get_all(){
+		$this->db->select('*')->order_by('id_pembelian',"desc");
 		return $this->db->get('pembelian')->result_array();
 	}
 	function get_all_item(){
@@ -17,5 +18,9 @@ class Pembelian_Model extends CI_Model{
 
 	function delete_item_pembelian($data){
 		return $this->db->delete('item_pembelian',$data);
+	}	
+
+	function get_newid(){
+		return $this->db->select('id_pembelian')->order_by('id_pembelian',"desc")->limit(1)->get('pembelian')->row_array();
 	}	
 }

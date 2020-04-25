@@ -3,8 +3,6 @@
                 <a href="<?php echo site_url('admin/kelola_obat');?>"><h6>Obat</h6></a>
                 <a href="<?php echo site_url('admin/kelola_supplier');?>"><h6>Supplier</h6></a>
                 <a href="<?php echo site_url('admin/kelola_apoteker');?>"><h6>Apoteker</h6></a>
-                <a href="<?php echo site_url('admin/riwayat_penjualan');?>"><h6>Riwayat Penjualan</h6></a>
-                <a href="<?php echo site_url('admin/riwayat_pembelian');?>"><h6>Riwayat Pembelian</h6></a>
             </div>
         </div>
     </div>

@@ -1,7 +1,8 @@
             <div class="row d-flex flex-column pl-4">
-                <span>Dashboard</span><br>
-                <span>Penjualan</span><br>
-                <span>Pembelian</span>
+                <a href="<?php echo site_url('apoteker'); ?>"><h6>Dashboard</h6></a>
+                <a href="<?php echo site_url('apoteker/ubah_harga_obat'); ?>"><h6>Ubah Harga Obat</h6></a>
+                <a href="<?php echo site_url('apoteker/kelola_penjualan'); ?>"><h6>Penjualan</h6></a>
+                <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><h6>Pembelian</h6></a>
             </div>
         </div>
     </div>

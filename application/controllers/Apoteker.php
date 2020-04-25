@@ -32,30 +32,28 @@ class Apoteker extends CI_Controller{
 	function kelola_penjualan(){
 		$data['penjualan'] = $this->penjualan_model->get_all();
 		$data['obat'] = $this->obat_model->get_all();
-		$data['item_penjualan'] = $this->penjualan_model->get_all_item();
 		$data['newid'] = $this->penjualan_model->get_newid();
 		$this->load->view('templates/top_template');
 		$this->load->view('apoteker/kelola_penjualan',$data);
 	}
 
-	function menu_pembelian(){
-		$this->load->view('pembelian');
+	function kelola_pembelian(){
+		$data['pembelian'] = $this->pembelian_model->get_all();
+		$data['obat'] = $this->obat_model->get_all();
+		$data['newid'] = $this->pembelian_model->get_newid();
+		$data['supplier'] = $this->supplier_model->get_all();
+		$this->load->view('templates/top_template');
+		$this->load->view('apoteker/kelola_pembelian',$data);
 	}
 
 	// menu navigasi end
 
 	// update profil apoteker
-	function ubah_profil($id){
-		$data = array(
-			'nama_lengkap' => $this->input->post('nama_lengkap'),
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password'),
-			'no_hp' => $this->input->post('no_hp'),
-			'email' => $this->input->post('email')
-		);
-
-		$this->apoteker_model->ubah_profil($id,$data);
-		redirect('apoteker/menu_kelola_profil/'.$id);
+	function kelola_profil($id){
+		$data['pengguna'] = $this->db->get_where('pengguna',array('id_pengguna' => $id))->row_array();
+		$this->session->set_userdata('nama',$data['pengguna']['nama_lengkap']);
+		$this->load->view('templates/top_template');
+		$this->load->view('apoteker/kelola_profil',$data);
 	}
 
 	//update harga jual obat
@@ -73,30 +71,19 @@ class Apoteker extends CI_Controller{
 	}
 
 	//create update delete penjualan
-	function input_penjualan(){
+	function input_penjualan($id_penjualan){
 		$data = array(
-			'id_penjualan' => $this->load->post('id_penjualan'),
-			'nama_konsumen' => $this->load->post('nama_konsumen'),
-			'tanggal_jual' => $this->load->post('tanggal_jual'),
-			'harga_total' => $this->load->post('harga_total')
+			'id_penjualan' => $id_penjualan,
+			'nama_konsumen' => $this->input->post('nama_konsumen'),
+			'id_obat' => $this->input->post('id_obat'),
+			'jumlah_obat'=> $this->input->post('jumlah_obat'),
+			'tanggal' => $this->input->post('tanggal'),
+			'harga_total' => $this->input->post('harga_total')
 		);
 		$this->penjualan_model->input_penjualan($data);
-		redirect('apoteker/menu_penjualan');
+		redirect('apoteker/kelola_penjualan');
 	}
 
-	// input dan delte item penjualan obat
-	function input_item_penjualan($id_obat){
-		
-		$this->item_penjualan_model->input_item_penjualan($id_obat);
-	} 
-
-	function delete_item_penjualan(){
-		$data = array(
-			'id_penjualan' => $this->load->post('id_penjualan'),
-			'id_obat' => $this->load->post('id_obat')
-		);
-		$this->item_penjualan_model->delete_item_penjualan($data);
-	}
 
 	//get harga obat
 	function get_harga_obat($id_obat){
@@ -104,35 +91,19 @@ class Apoteker extends CI_Controller{
 	}
 
 	//create update delete pembelian
-	function input_pembelian(){
+	function input_pembelian($id_pembelian){
 		$data = array(
-			'id_pembelian' => $this->input->post('id_pembelian'),
+			'id_pembelian' => $id_pembelian,
 			'no_faktur' => $this->input->post('no_faktur'),
-			'tgl_beli' => $this->input->post('tgl_beli'),
-			'jenis_pembelian' => $this->input->post('jenis_pembelian'),
+			'id_obat' => $this->input->post('id_obat'),
+			'jumlah_obat' => $this->input->post('jumlah_obat'),
+			'tanggal' => $this->input->post('tanggal'),
+			'jenis' => $this->input->post('jenis'),
 			'id_supplier' => $this->input->post('id_supplier'),
-			'tgl_expired' => $this->input->post('tgl_expired')
+			'tanggal_kadaluarsa' => $this->input->post('tanggal_kadaluarsa')
 		);
 		$this->pembelian_model->input_pembelian($data);
-		redirect('apoteker/menu_pembelian');
-	}
-
-	// input dan delte item penjualan obat
-	function input_item_pembelian(){
-		$data = array(
-			'id_pembelian' => $this->load->post('id_pembelian'),
-			'id_obat' => $this->load->post('id_obat'),
-			'jumlah_obat' => $this->load->post('jumlah_obat')
-		);
-		$this->item_pembelian_model->input_item_pembelian($data);
-	} 
-
-	function delete_item_pembelian(){
-		$data = array(
-			'id_pembelian' => $this->load->post('id_pembelian'),
-			'id_obat' => $this->load->post('id_obat')
-		);
-		$this->item_pembelian_model->delete_item_pembelian($data);
+		redirect('apoteker/kelola_pembelian');
 	}
 
 

@@ -24,6 +24,7 @@ class Admin extends CI_Controller{
 
 	function kelola_profil($id){
 		$data['pengguna'] = $this->db->get_where('pengguna',array('id_pengguna' => $id))->row_array();
+		$this->session->set_userdata('nama',$data['pengguna']['nama_lengkap']);
 		$this->load->view('templates/top_template');
 		$this->load->view('admin/kelola_profil',$data);
 	}
@@ -47,18 +48,6 @@ class Admin extends CI_Controller{
 		$data['newid'] = $this->apoteker_model->get_newid();
 		$this->load->view('templates/top_template');
 		$this->load->view('admin/kelola_apoteker',$data);
-	}
-
-	function riwayat_pembelian(){
-		$data = $this->pembelian_model->get_all();
-		$this->load->view('templates/top_template');
-		$this->load->view('admin/riwayat_pembelian',$data);
-	}
-
-	function riwayat_penjualan(){
-		$data = $this->penjualan_model->get_all();
-		$this->load->view('templates/top_template');
-		$this->load->view('admin/riwayat_penjualan',$data);
 	}
 
 	// Menu Navigasi End
