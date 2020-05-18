@@ -19,6 +19,8 @@ class Apoteker extends CI_Controller{
 
 	function index(){
 		$data['obat'] = $this->obat_model->get_all();
+		$json = file_get_contents("./assets/data1.json");
+		$data['json'] = json_decode($json,true);
 		$this->load->view('templates/top_template');
 		$this->load->view('apoteker/dashboard_apoteker',$data);
 	}

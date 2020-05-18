@@ -16,25 +16,58 @@
                 <h2>Dashboard</h2>
             </div>
             <div class="ml-auto">
-                <button class="btn btn-primary mr-2" style="font-size: 12px; padding: 5px">ubah</button>
-                <span>09:00 , 01 Januari 2020<span>
+                <span id="tanggal"><span>
             </div>
         </div>
     </div>
 
-    <!-- tombol navigasi menu -->
+    
     <div class="container spad">
-        <div class="col-12">
-            <div class="row d-flex justify-content-center">
-                <a href="<?php echo site_url('apoteker/kelola_penjualan'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
-                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Penjualan</span>
-               </div></a>
+        <div class="row">
+            <!-- tombol navigasi menu -->
+            <div class="col-6">
+                <div class="row d-flex justify-content-center">
+                    <a href="<?php echo site_url('apoteker/kelola_penjualan'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
+                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                        <span>Penjualan</span>
+                   </div></a>
 
-               <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
-                    <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Pembelian</span>
-               </div></a>
+                   <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
+                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                        <span>Pembelian</span>
+                   </div></a>
+                </div>
+            </div>
+
+            <!-- tabel data json -->
+            <div class="col-6">
+                <div class="row">
+                    <div class="rounded p-5 mx-3" style="background-color: white">
+                        <h5>Table JSON</h5>
+                        <div class="row mt-5">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Jenis</th>
+                                    <th scope="col">Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $no=1; foreach ($json['obat'] as $row) { ?>
+                                        <tr>
+                                            <th scope="row"><?php echo $no; ?></th>
+                                            <td><?php echo $row['nama']; ?></td>
+                                            <td><?php echo $row['jenis']; ?></td>
+                                            <td><?php echo $row['harga']; ?></td>
+                                        </tr>
+                                    <?php $no++; } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

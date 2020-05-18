@@ -16,8 +16,7 @@
                 <h2>Obat</h2>
             </div>
             <div class="ml-auto">
-                <button class="btn btn-primary mr-2" style="font-size: 12px; padding: 5px">ubah</button>
-                <span>09:00 , 01 Januari 2020<span>
+                <span id="tanggal"><span>
             </div>
         </div>
     </div>

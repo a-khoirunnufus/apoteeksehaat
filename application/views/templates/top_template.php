@@ -65,6 +65,11 @@
 
     <!-- custom script   -->
     <script>
+        $(document).ready(function(){
+            var date = Date();
+            $("#tanggal").text(date);
+        });
+        
         function openNav() {
           document.getElementById("mySidenav").style.width = "250px";
           document.getElementById("sidebar_toggler").getAttributeNode("onclick").value = "closeNav()";

@@ -1,0 +1,9 @@
+{
+	"obat" : [
+		{"nama" : "AMOXCILIN", "jenis" : "TABLET", "harga" : "5000"},
+		{"nama" : "AMOXSAN", "jenis" : "TABLET", "harga" : "1500"},
+		{"nama" : "AMPICILIN SIRUP", "jenis" : "SIRUP", "harga" : "21000"},
+		{"nama" : "ANADEX", "jenis" : "TABLET", "harga" : "6000"},
+		{"nama" : "ANADIUM", "jenis" : "TABLET", "harga" : "7500"}
+	]
+}
