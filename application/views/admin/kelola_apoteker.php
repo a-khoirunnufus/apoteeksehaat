@@ -25,13 +25,13 @@
     <div class="container spad">
         <div class="col-6 rounded mx-auto p-5" style="background-color: white">
             <h4>Tambah Apoteker</h4><br>
-            <form action="<?php echo site_url('admin/input_apoteker'); ?>" method="post">
+            <form action="<?php echo site_url('admin/input_apoteker/'.($newid['id_pengguna']+1)); ?>" method="post">
                 <div class="form-group row">
                     <div class="col-sm-4">
                         <label>Id Apoteker</label>
                     </div>
                     <div class="col-sm-8 ml-auto">
-                        <input class="form-control form-control-sm" type="text" name="id_pengguna" value="<?php echo $newid['id_pengguna']+1; ?>">
+                        <input class="form-control form-control-sm" type="text" name="id_pengguna" value="<?php echo $newid['id_pengguna']+1; ?>" disabled>
                     </div>
                 </div>
                 <div class="form-group row">

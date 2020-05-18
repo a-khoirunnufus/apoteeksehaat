@@ -62,7 +62,7 @@
                             <label>Jumlah Obat</label>
                         </div>
                         <div class="col-sm-8 ml-auto">
-                            <input class="form-control form-control-sm" type="text" name="jumlah_obat">
+                            <input id="tf_jumlahobat" class="form-control form-control-sm" type="text" name="jumlah_obat">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -79,10 +79,10 @@
                         </div>
                         <div class="col-sm-8 ml-auto d-flex justify-content-between">
                             <div class="col">
-                                <input class="form-control form-control-sm" type="text" name="harga_total">
+                                <input id="tf_hargatotal" class="form-control form-control-sm" type="text" name="harga_total">
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary">Cetak Harga</div>
+                                <div id="btn_cetakharga" class="btn btn-primary">Cetak Harga</div>
                             </div>
                         </div>
                     </div>
@@ -173,11 +173,32 @@
       </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
         $(document).ready(function(){
           $(".btn_pilihobat").click(function(){
             $("#tf_idobat").val($(this).val());
           });
+
+          $("#btn_cetakharga").click(function(){
+            var id_obat = $("#tf_idobat").val();
+            var jumlah = $("#tf_jumlahobat").val();
+            $.ajax({
+                type : "GET",
+                url : '<?php echo base_url('apoteker/data_obat'); ?>',
+                async : true,
+                dataType : 'json',
+                success : function(data){
+                    var i = 0;
+                    while(data[i].id_obat != id_obat){
+                        i++;
+                    }
+                    var harga_total = data[i].harga_jual * jumlah;
+                    $('#tf_hargatotal').val(harga_total);
+                }
+            })
+
+          });
+
         });
     </script>
 

@@ -67,9 +67,9 @@ class Admin extends CI_Controller{
 	}
 
 	//Create Update Delete Obat
-	function input_obat(){
+	function input_obat($id_obat){
 		$data = array(
-			'id_obat' => $this->input->post('id_obat'),
+			'id_obat' => $id_obat,
 			'nama_obat' => $this->input->post('nama_obat'),
 			'golongan_obat' => $this->input->post('golongan_obat'),
 			'bentuk_obat' => $this->input->post('bentuk_obat'),
@@ -101,9 +101,9 @@ class Admin extends CI_Controller{
 	}
 
 	//Create Update Delete Supplier
-	function input_supplier(){
+	function input_supplier($id_supplier){
 		$data = array(
-			'id_supplier' => $this->input->post('id_supplier'),
+			'id_supplier' => $id_supplier,
 			'nama_supplier' => $this->input->post('nama_supplier'),
 			'alamat_supplier' => $this->input->post('alamat_supplier'),
 			'no_telepon' => $this->input->post('no_telepon'),
@@ -132,9 +132,9 @@ class Admin extends CI_Controller{
 	}
 
 	//Create Update Delete Apoteker
-	function input_apoteker(){
+	function input_apoteker($id_pengguna){
 		$data = array(
-			'id_pengguna' => $this->input->post('id_pengguna'),
+			'id_pengguna' => $id_pengguna,
 			'nama_lengkap' => $this->input->post('nama_lengkap'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),

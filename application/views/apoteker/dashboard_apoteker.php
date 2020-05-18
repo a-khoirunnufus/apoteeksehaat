@@ -28,12 +28,12 @@
             <div class="col-6">
                 <div class="row d-flex justify-content-center">
                     <a href="<?php echo site_url('apoteker/kelola_penjualan'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
-                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/penjualan.png'); ?>" style="width: 100px"> 
                         <span>Penjualan</span>
                    </div></a>
 
                    <a href="<?php echo site_url('apoteker/kelola_pembelian'); ?>"><div class="rounded p-5 mx-3" style="background-color: white">
-                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                        <img class="d-block mb-3" src="<?php echo base_url('assets/img/pembelian.png'); ?>" style="width: 100px"> 
                         <span>Pembelian</span>
                    </div></a>
                 </div>

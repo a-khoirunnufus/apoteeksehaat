@@ -55,31 +55,21 @@
     <!-- tombol navigasi menu -->
     <div class="container spad" style="margin-bottom: 150px">
         <div class="col-12">
-        	<div class="row d-flex justify-content-between " style="text-align: center;">
+        	<div class="row d-flex justify-content-center" style="text-align: center;">
                 <a href="<?php echo site_url('admin/kelola_obat'); ?>">
-                    <div class="rounded p-5" style="background-color: white">
-                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                    <div class="rounded p-5 mx-5" style="background-color: white">
+                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/obat.png'); ?>" style="width: 100px"> 
                     <span>Obat</span>
                 </div></a>
 
-                <a href="<?php echo site_url('admin/kelola_supplier'); ?>"><div class="rounded p-5" style="background-color: white">
-                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+                <a href="<?php echo site_url('admin/kelola_supplier'); ?>"><div class="rounded p-5 mx-5" style="background-color: white">
+                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/supplier.png'); ?>" style="width: 100px"> 
                     <span>Supplier</span>
                </div></a>
 
-               <a href="<?php echo site_url('admin/kelola_apoteker'); ?>"><div class="rounded p-5" style="background-color: white">
-                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
+               <a href="<?php echo site_url('admin/kelola_apoteker'); ?>"><div class="rounded p-5 mx-5" style="background-color: white">
+                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/apoteker.png'); ?>" style="width: 100px"> 
                     <span>Apoteker</span>
-               </div></a>
-               
-                <a href="<?php echo site_url('admin/riwayat_penjualan'); ?>"><div class="rounded p-5" style="background-color: white">
-                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Riwayat Penjualan</span>
-               </div></a>
-               
-                <a href="<?php echo site_url('admin/riwayat_pembelian'); ?>"><div class="rounded p-5" style="background-color: white">
-                    <img class="d-block mb-3 mx-auto" src="<?php echo base_url('assets/img/input_penjualan.png'); ?>" style="width: 100px"> 
-                    <span>Riwayat Pembelian</span>
                </div></a>
             </div>
         </div>

@@ -70,7 +70,7 @@
                             <label>Tanggal Transaksi</label>
                         </div>
                         <div class="col-sm-8 ml-auto">
-                            <input class="form-control form-control-sm" type="text" name="tanggal">
+                            <input class="form-control form-control-sm" type="date" name="tanggal">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -99,7 +99,7 @@
                             <label>Tanggal Kadaluarsa</label>
                         </div>
                         <div class="col-sm-8 ml-auto">
-                            <input class="form-control form-control-sm" type="text" name="tanggal_kadaluarsa">
+                            <input class="form-control form-control-sm" type="date" name="tanggal_kadaluarsa">
                         </div>
                     </div>
                     <div class="form-group row mt-4">

@@ -108,5 +108,11 @@ class Apoteker extends CI_Controller{
 		redirect('apoteker/kelola_pembelian');
 	}
 
+	//print data obat
+	function data_obat(){
+		$data = $this->obat_model->get_all();
+		echo json_encode($data);
+	}
+
 
 }
